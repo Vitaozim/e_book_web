@@ -1,0 +1,5 @@
+<a href="#_ftn(\d{1,2})" name="_ftnref\d{1,2}" title="" id="_ftnref\d{1,2}"> </a>
+<button class="bt-nota-rodape" data-nota="$1"></button>
+
+<div id="ftn(\d{1,2})">([\s\S]*?)</div>
+<aside class="nota-rodape" data-nota="$1">$2</aside>
