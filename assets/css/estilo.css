@@ -1250,6 +1250,24 @@ footer.footer {
     transform: rotateY(0deg) rotateZ(100deg);
     width: 360px;
     height: auto; }
+  footer.footer > a.comecar-ebook {
+    white-space: nowrap;
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #386563;
+    color: #c7e9ea;
+    text-transform: uppercase;
+    padding: 0.7em 1.8em;
+    line-height: 1;
+    text-decoration: none;
+    height: 45.5px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+    footer.footer > a.comecar-ebook span {
+      vertical-align: middle; }
   footer.footer .pag-nav {
     left: 50%;
     transform: translateX(-50%);
@@ -1315,12 +1333,6 @@ footer.footer {
           margin-left: 0em; }
         footer.footer .artigo-nav > .grafismo .bolinha:nth-child(2) {
           background-color: #0e7e70; }
-  footer.footer.capa > .grafismo {
-    bottom: 0;
-    left: auto;
-    right: -390px;
-    transform: rotateY(180deg) rotateZ(90deg);
-    width: 630px; }
   @media screen and (max-width: 1100px) {
     footer.footer {
       padding: 0 13px; }
@@ -1390,31 +1402,6 @@ main {
         main.capa > section article dl dd {
           margin: 0;
           font-weight: 500; }
-      main.capa > section article .logos {
-        margin-top: 65px;
-        position: relative; }
-        main.capa > section article .logos img {
-          display: inline-block;
-          vertical-align: middle;
-          height: 39px;
-          margin-right: 26px; }
-          main.capa > section article .logos img:nth-child(1) {
-            height: 71.5px; }
-          main.capa > section article .logos img:nth-child(2) {
-            height: 32.5px; }
-          main.capa > section article .logos img:nth-child(3) {
-            vertical-align: text-top; }
-          main.capa > section article .logos img:nth-child(4) {
-            height: 52px; }
-          main.capa > section article .logos img.grafismo {
-            position: absolute;
-            right: -150px;
-            bottom: -300px;
-            height: 500px;
-            margin: 0; }
-  @media screen and (max-width: 1100px) {
-    main.capa > section article .logos img {
-      margin-bottom: 26px; } }
   @media screen and (max-width: 800px) {
     main.capa > section article {
       padding: 26px 13px; }
@@ -1424,28 +1411,7 @@ main {
         main.capa > section article h1 span br {
           display: none; }
       main.capa > section article dl {
-        font-size: 1em; }
-      main.capa > section article .logos {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        align-items: center; }
-        main.capa > section article .logos img {
-          margin-bottom: 13px; }
-          main.capa > section article .logos img:nth-child(1) {
-            height: 44.2px; }
-          main.capa > section article .logos img:nth-child(2) {
-            height: 19.5px; }
-          main.capa > section article .logos img:nth-child(3) {
-            height: 27.3px; }
-          main.capa > section article .logos img:nth-child(4) {
-            height: 45.5px; }
-          main.capa > section article .logos img.grafismo {
-            position: absolute;
-            right: -150px;
-            bottom: -300px;
-            height: 500px;
-            margin: 0; } }
+        font-size: 1em; } }
   @media screen and (max-width: 800px) {
     main {
       height: 100vh;
@@ -1464,12 +1430,14 @@ article {
     margin-bottom: 1em;
     margin-left: 6%;
     width: 50%; }
-  article .resumo h4 {
-    margin-top: 2em;
-    margin-bottom: 0; }
-  article .resumo p {
-    margin: 0;
-    margin-bottom: 1em; }
+  article .resumo {
+    padding-bottom: 3.5rem; }
+    article .resumo h4 {
+      margin-top: 2em;
+      margin-bottom: 0; }
+    article .resumo p {
+      margin: 0;
+      margin-bottom: 1em; }
   article a[href*="http"], article a[href*="www"], article a[href*="mailto:"] {
     color: #41a18e;
     text-decoration: underline;
@@ -1498,6 +1466,8 @@ article {
   article h4 {
     font-size: 1em;
     color: #333; }
+    article h4 + h2 {
+      margin-top: 0; }
   article ul, article ol {
     padding-left: 2em; }
     article ul li, article ol li {
@@ -1507,11 +1477,16 @@ article {
   article figure {
     margin-top: 2em;
     margin-bottom: 2em; }
+    article figure:hover {
+      cursor: pointer; }
     article figure img {
+      margin: 0 auto;
       display: block;
-      width: 100%;
+      width: auto;
+      max-width: 100%;
       height: auto; }
     article figure figcaption {
+      text-align: center;
       font-size: .9em; }
   article blockquote {
     margin-top: 2em;
@@ -1522,6 +1497,28 @@ article {
       margin: 0;
       margin-bottom: 1em;
       margin-left: 6%; }
+  article table {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    font-size: 0.85em;
+    line-height: 1.4; }
+    article table, article table * {
+      border-collapse: collapse; }
+    article table caption {
+      caption-side: bottom;
+      font-style: italic; }
+    article table p {
+      margin: 0;
+      margin-bottom: 1em; }
+    article table th {
+      font-weight: bold; }
+    article table thead {
+      border-bottom: 3px solid #333; }
+      article table thead th {
+        padding: 0.1em 0; }
+    article table th, article table td {
+      padding: 0.3em 0 0.3em 0.2em;
+      border-bottom: 1px solid #b4b4b4; }
   article audio {
     margin-left: 6%;
     width: 94%; }
@@ -1529,6 +1526,53 @@ article {
     box-shadow: 0px 2px 5px 0px rgba(14, 126, 112, 0.4); }
   article .hidden {
     display: none; }
+  article .logos {
+    margin-top: 104px;
+    position: relative; }
+    article .logos img {
+      display: inline-block;
+      vertical-align: middle;
+      height: 42.9px;
+      margin-right: 26px; }
+      article .logos img:nth-child(1) {
+        height: 75.4px; }
+      article .logos img:nth-child(2) {
+        height: 35.1px; }
+      article .logos img:nth-child(3) {
+        vertical-align: text-top; }
+      article .logos img:nth-child(4) {
+        height: 57.2px; }
+      article .logos img.grafismo {
+        position: absolute;
+        right: -150px;
+        bottom: -300px;
+        height: 500px;
+        margin: 0; }
+    @media screen and (max-width: 1100px) {
+      article .logos img {
+        margin-bottom: 26px; } }
+    @media screen and (max-width: 800px) {
+      article .logos {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center; }
+        article .logos img {
+          margin-bottom: 13px; }
+          article .logos img:nth-child(1) {
+            height: 44.2px; }
+          article .logos img:nth-child(2) {
+            height: 19.5px; }
+          article .logos img:nth-child(3) {
+            height: 27.3px; }
+          article .logos img:nth-child(4) {
+            height: 45.5px; }
+          article .logos img.grafismo {
+            position: absolute;
+            right: -150px;
+            bottom: -300px;
+            height: 500px;
+            margin: 0; } }
   article span.paginacao {
     float: left;
     clear: left;
@@ -1656,8 +1700,8 @@ article {
         display: inline-block;
         width: 26px;
         height: 26px;
-        border: 1px solid #7F7F7F;
-        color: #333;
+        border: 1px solid #0e7e70;
+        color: #0e7e70;
         font-size: 2em;
         line-height: 0;
         background-color: #fff; }
@@ -1727,16 +1771,26 @@ article {
             margin: 0 0 1em; }
           article aside.autores div.autor .img-e-mini a {
             color: #41a18e; }
+            article aside.autores div.autor .img-e-mini a[href*="mailto"] {
+              display: block;
+              margin-top: 1em;
+              clear: both; }
+              article aside.autores div.autor .img-e-mini a[href*="mailto"] + a {
+                margin-top: 0; }
         article aside.autores div.autor.atual h3:after {
           transform: rotate(180deg); }
         article aside.autores div.autor.atual .img-e-mini {
           overflow: hidden; }
     article aside.nota-rodape {
+      box-shadow: 0px 1px 4px 1px rgba(14, 126, 112, 0.4);
+      background-color: #fff;
+      padding: 1em;
       position: absolute;
       right: 0;
       font-size: .9em;
       display: none;
-      animation: animOpacity 0.3s linear 0s 1 normal both, fromLeft 	0.3s ease-out 0s 1 normal both; }
+      animation: animOpacity 0.3s linear 0s 1 normal both, fromLeft 	0.3s ease-out 0s 1 normal both;
+      z-index: 2; }
       article aside.nota-rodape.visivel {
         display: block; }
       article aside.nota-rodape:before {
@@ -1883,8 +1937,7 @@ article {
           background-color: white;
           box-shadow: 0px 3px 10px 3px rgba(14, 126, 112, 0.4);
           margin: 13px;
-          width: calc(100% - 26px);
-          padding: 13px; }
+          width: calc(100% - 26px); }
           article aside.nota-rodape button.fechar {
             display: block; }
             article aside.nota-rodape button.fechar + * {
@@ -1965,10 +2018,21 @@ article {
   article.ficha-tecnica h1 {
     margin-bottom: 1em;
     margin-top: 1.5em; }
+  article.ficha-tecnica h2, article.ficha-tecnica h3 {
+    margin-top: 3em; }
   article.ficha-tecnica dl dt {
+    margin-top: 1em;
     font-weight: 600;
     color: #41a18e; }
   article.ficha-tecnica dl dd {
-    margin-left: 0; }
+    margin-left: 0;
+    line-height: 1.3;
+    margin-bottom: 0.5em; }
+  article.ficha-tecnica .ficha-catalografica {
+    padding: 1em;
+    border: 1px solid #b4b4b4; }
+  article.ficha-tecnica .logos {
+    width: 94%;
+    margin-top: 52px; }
 
 /*# sourceMappingURL=estilo.css.map */

@@ -160,6 +160,27 @@ footer.footer{
 		width: 360px;
 		height: auto;
 	}
+
+	& > a.comecar-ebook{
+		white-space: nowrap;
+		position: absolute;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $turquesa4;
+		color: $turquesa1;
+		text-transform: uppercase;
+		padding: 0.7em 1.8em;
+		line-height: 1;
+		text-decoration: none;
+		height: 3.5*$size-moldura;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		span{
+			vertical-align: middle;
+		}
+	}
 	.pag-nav{
 		left: 50%;
 		transform: translateX(-50%);
@@ -258,13 +279,7 @@ footer.footer{
 
 
 	&.capa{
-		& > .grafismo{
-			bottom: 0;
-			left: auto;
-			right: -390px;
-			transform: rotateY(180deg) rotateZ(90deg);
-			width: 630px;
-		}
+		
 	}
 
 	@media screen and (max-width: 1100px){
@@ -360,53 +375,9 @@ main{
 						font-weight: 500;
 					}
 				}
-
-				.logos{
-					margin-top: 5*$size-moldura;
-					position: relative;
-					img{
-						display: inline-block;
-						vertical-align: middle;
-						height: 3*$size-moldura;
-						margin-right: 2*$size-moldura;
-
-						&:nth-child(1){
-							height: 5.5*$size-moldura;
-						}
-						&:nth-child(2){
-							height: 2.5*$size-moldura;
-						}
-						&:nth-child(3){
-							vertical-align: text-top;
-						}
-						&:nth-child(4){
-							height: 4*$size-moldura;
-						}
-
-						&.grafismo{
-							position: absolute;
-							right: -150px;
-							bottom: -300px;
-							height: 500px;
-							margin: 0;
-						}
-					}
-				}
 			}
 		}
 
-		@media screen and (max-width: 1100px){
-			& > section{
-				article{
-					.logos{
-						img{
-							margin-bottom: 2*$size-moldura;							
-
-						}	
-					}
-				}	
-			}
-		}
 
 		@media screen and (max-width: 800px){
 			& > section{
@@ -424,36 +395,6 @@ main{
 					}
 					dl{
 						font-size: 1em;
-					}
-
-					.logos{
-						display: flex;
-						justify-content: space-around;
-						flex-wrap: wrap;
-						align-items: center;
-						img{
-							margin-bottom: $size-moldura;							
-							&:nth-child(1){
-								height: 3.4*$size-moldura;
-							}
-							&:nth-child(2){
-								height: 1.5*$size-moldura;
-							}
-							&:nth-child(3){
-								height: 2.1*$size-moldura;
-							}
-							&:nth-child(4){
-								height: 3.5*$size-moldura;
-							}
-
-							&.grafismo{
-								position: absolute;
-								right: -150px;
-								bottom: -300px;
-								height: 500px;
-								margin: 0;
-							}
-						}
 					}
 				}
 			}
@@ -486,6 +427,7 @@ article{
 	}
 
 	.resumo{
+
 		h4{
 			margin-top: 2em;
 			margin-bottom: 0;
@@ -494,6 +436,7 @@ article{
 			margin: 0;
 			margin-bottom: 1em;
 		}
+		padding-bottom: 3.5rem;
 	}
 
 	a{
@@ -538,6 +481,9 @@ article{
 	h4{
 		font-size: 1em;
 		color: $cinza-texto;
+		&+h2{
+			margin-top: 0;
+		}
 	}
 
 	ul, ol{
@@ -553,12 +499,18 @@ article{
 	figure{
 		margin-top: 2em;
 		margin-bottom: 2em;
+		&:hover{
+			cursor: pointer;
+		}
 		img{
+			margin: 0 auto;
 			display: block;
-			width: 100%;
+			width: auto;
+			max-width: 100%;
 			height: auto;
 		}
 		figcaption{
+			text-align: center;
 			font-size: .9em;
 		}
 	}
@@ -575,6 +527,45 @@ article{
 		}
 	}
 
+	div.table-scroller{
+		overflow-x: auto;
+	}
+
+	table{
+		margin-top: 3em;
+		margin-bottom: 3em;
+		font-size: 0.85em;
+		line-height: 1.4;
+		&, & *{
+			border-collapse: collapse;
+		}
+		caption{
+			margin-top: 0.4em;
+			caption-side: bottom;
+			font-style: italic;
+		}
+
+		p{
+			margin: 0;
+			margin-bottom: 1em;
+		}
+
+		th{
+			font-weight: bold;
+		}
+		thead{
+			border-bottom: 3px solid $cinza-texto;
+			th{
+				padding: 0.1em 0;
+			}
+		}
+
+		th,td{
+			padding: 0.3em 0 0.3em 0.2em;
+			border-bottom: 1px solid $cinza;
+		}
+	}
+
 	audio{
 		margin-left: 6%;
 		width: 94%;
@@ -586,6 +577,74 @@ article{
 
 	.hidden{
 		display: none;
+	}
+
+	.logos{
+		margin-top: 8*$size-moldura;
+		position: relative;
+		img{
+			display: inline-block;
+			vertical-align: middle;
+			height: 3.3*$size-moldura;
+			margin-right: 2*$size-moldura;
+
+			&:nth-child(1){
+				height: 5.8*$size-moldura;
+			}
+			&:nth-child(2){
+				height: 2.7*$size-moldura;
+			}
+			&:nth-child(3){
+				vertical-align: text-top;
+			}
+			&:nth-child(4){
+				height: 4.4*$size-moldura;
+			}
+
+			&.grafismo{
+				position: absolute;
+				right: -150px;
+				bottom: -300px;
+				height: 500px;
+				margin: 0;
+			}
+		}
+
+		@media screen and (max-width: 1100px){
+			img{
+				margin-bottom: 2*$size-moldura;							
+			}
+		}
+
+		@media screen and (max-width: 800px){
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			align-items: center;
+			img{
+				margin-bottom: $size-moldura;							
+				&:nth-child(1){
+					height: 3.4*$size-moldura;
+				}
+				&:nth-child(2){
+					height: 1.5*$size-moldura;
+				}
+				&:nth-child(3){
+					height: 2.1*$size-moldura;
+				}
+				&:nth-child(4){
+					height: 3.5*$size-moldura;
+				}
+
+				&.grafismo{
+					position: absolute;
+					right: -150px;
+					bottom: -300px;
+					height: 500px;
+					margin: 0;
+				}
+			}
+		}
 	}
 
 	span.paginacao{
@@ -764,8 +823,8 @@ article{
 				display: inline-block;
 				width: 2*$size-moldura;
 				height: 2*$size-moldura;
-				border: 1px solid $cinza-escuro;
-				color: $cinza-texto;
+				border: 1px solid $turquesa3;
+				color: $turquesa3;
 				font-size: 2em;
 				line-height: 0;
 				background-color: #fff;
@@ -853,6 +912,14 @@ article{
 
 					a{
 						color: $turquesa2;
+						&[href*="mailto"]{
+							display: block;
+							margin-top: 1em;
+							clear: both;
+							&+a{
+								margin-top: 0;
+							}
+						}
 					}
 				}
 
@@ -871,12 +938,16 @@ article{
 		}
 
 		&.nota-rodape{
+			box-shadow: 0px 1px 4px 1px transparentize($turquesa3, 0.6);	
+			background-color: #fff;
+			padding: 1em;
 			position: absolute;
 			right: 0;
 			font-size: .9em;
 			display: none;
 			animation: 	animOpacity 0.3s linear 0s 1 normal both,
 						fromLeft 	0.3s ease-out 0s 1 normal both;
+			z-index: 2;
 			&.visivel{
 				display: block;
 			}
@@ -1089,7 +1160,6 @@ article{
 				box-shadow: 0px 3px 10px 3px transparentize($turquesa3, 0.6);
 				margin: $size-moldura;
 				width: calc(100% - #{2*$size-moldura});
-				padding: $size-moldura;
 				button.fechar{
 					display: block;
 					& + *{
@@ -1227,14 +1297,31 @@ article{
 			margin-top: 1.5em;
 		}
 
+		h2,h3{
+			margin-top: 3em;
+		}
+
 		dl{
 			dt{
+				margin-top: 1em;
 				font-weight: 600;
 				color: $turquesa2;
 			}
 			dd{
 				margin-left: 0;
+				line-height: 1.3;
+				margin-bottom: 0.5em;
 			}
+		}
+
+		.ficha-catalografica{
+			padding: 1em;
+			border: 1px solid $cinza;
+		}
+
+		.logos{
+			width: 94%;
+			margin-top: 4*$size-moldura;
 		}	
 	}
 }

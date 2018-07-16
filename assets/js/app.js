@@ -17,6 +17,8 @@ jQuery(document).ready(function($) {
 		$redesSocias.toggleClass('hidden');
 	});
 
+	// Envolver tables em scroller
+	$('article table').wrap('<div class="table-scroller"></div>');
 
 	// sumario de vídeos leva para o video já no tempo
 	$('article.sumario .artigos.videos a').each(function(index, el) {
@@ -98,6 +100,8 @@ jQuery(document).ready(function($) {
 
 
 	// Galeria de imagens
+
+	$.fancybox.defaults.transitionEffect = 'slide';
 	var $galerias = $('section.galeria');
 
 
@@ -108,7 +112,7 @@ jQuery(document).ready(function($) {
 			var futureAnchor = $('<a></a>').attr({
 				'href': $(el2).children("img").attr("src"),
 				'data-fancybox': 'galeria-'+(index+1),
-				'data-caption': $(el2).children("figcaption").text(),
+				'data-caption': $(el2).children("figcaption").html(),
 				'style': 'background-image: url('+$(el2).children("img").attr("src")+')'
 			});
 
@@ -117,6 +121,23 @@ jQuery(document).ready(function($) {
 		});
 
 		$thisGaleria.addClass('loaded');
+	});
+
+	// Fotos solitarias tambem merecem zoom!
+	var $fotos_sozinhas = $('article > figure');
+	$fotos_sozinhas.each(function(index, el) {
+		$(el).find('img').on('click', function(event) {
+			$.fancybox.open([
+				{
+					src  : $(this).attr('src'),
+					opts : {
+						caption : $(el).find('figcaption').html(),
+						thumb   : $(this).attr('src')
+					}
+				},
+				
+			])
+		});
 	});
 
 	// Minicurriculos retráteis
